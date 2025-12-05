@@ -16,7 +16,23 @@ const _inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Biyuya Admin Dashboard",
   description: "Admin dashboard for Biyuya",
-    generator: 'v0.app'
+  generator: 'v0.app',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
+      { url: '/biyuya-logo-small.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/biyuya-logo-small.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'icon',
+        url: '/biyuya-logo.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+  },
 }
 
 export const viewport: Viewport = {

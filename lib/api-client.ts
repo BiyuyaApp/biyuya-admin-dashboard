@@ -24,11 +24,19 @@ class ApiClient {
   ): Promise<T> {
     const url = `${this.baseUrl}${endpoint}`;
 
+    // Get credentials from environment
+    const username = process.env.NEXT_PUBLIC_ADMIN_USERNAME || '';
+    const password = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || '';
+
+    // Encode credentials in Base64 for HTTP Basic Auth (browser-compatible)
+    const credentials = btoa(`${username}:${password}`);
+
     try {
       const response = await fetch(url, {
         ...options,
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Basic ${credentials}`,
           ...options?.headers,
         },
       });

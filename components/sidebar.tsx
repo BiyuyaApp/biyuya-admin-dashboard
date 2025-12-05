@@ -24,9 +24,11 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
     <aside className="flex h-full w-[220px] flex-col border-r border-sidebar-border bg-sidebar-bg">
       {/* Logo */}
       <div className="flex h-14 items-center gap-2 border-b border-sidebar-border px-5">
-        <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent">
-          <span className="text-sm font-bold text-accent-foreground">B</span>
-        </div>
+        <img
+          src="/biyuya-logo-small.png"
+          alt="Biyuya"
+          className="h-7 w-7 object-contain"
+        />
         <span className="text-sm font-semibold text-sidebar-foreground-active">Biyuya</span>
       </div>
 
